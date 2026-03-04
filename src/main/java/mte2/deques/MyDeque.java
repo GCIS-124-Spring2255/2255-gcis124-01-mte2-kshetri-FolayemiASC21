@@ -4,26 +4,46 @@
 
 package mte2.deques;
 
-// import java.util.LinkedList;
-// import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Iterator;
 
-public class MyDeque {
-// public class MyDeque<E> implements Deque<E> {
+// public class MyDeque {
+public class MyDeque<E> implements Deque<E> {
     
-    // private final LinkedList<E> list;
-    // public MyDeque() {    list = new LinkedList<>();    }
+    private final LinkedList<E> list;
+    public int index;
+    public MyDeque() {
+        this.list = new LinkedList<>();
+        this.index = 0;
+    }
 
-    // ... for enqueueFront ...
+    public void enqueueFront(E value) {
+        list.addFirst(value);
+    }
+    public void enqueueBack(E value) {
+        list.add(value);
+    }
 
-    // ... for enqueueBack ...
+    public E dequeueFront() {
+        return list.removeFirst();
+    }
 
-    // ... for dequeueFront ...
+    public E dequeueBack() {
+        return list.removeLast();
+    }
 
-    // ... for dequeueBack ... 
+    public int size() {
+        return list.size();
+    }
 
-    // ... for size ...
+    public boolean hasNext() {
+        return list.get(index+1)!=null;
+    }
 
-    // ... for iterator ...
+    public Iterator<E> iterator() {
+        while (hasNext()) {
+        }
+    }
 
 
     public static void main(String[] args) { 
